@@ -53,11 +53,11 @@ export default function Home() {
   // TODO: Modify the color schemes, fonts, and UI as needed for a good user experience
   // Refer to the Tailwind CSS docs here: https://tailwindcss.com/docs/customizing-colors, and here: https://tailwindcss.com/docs/hover-focus-and-other-states
   return (
-    <div className="flex flex-col h-screen bg-gray-900">
+    <div className="flex flex-col h-screen bg-teal-900">
       {/* Header */}
-      <div className="w-full bg-gray-800 border-b border-gray-700 p-4">
+      <div className="w-full bg-emerald-800 border-b border-gray-700 p-4">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-xl font-semibold text-white">Chat</h1>
+          <h1 className="text-xl font-semibold text-white">Nature Webscraping - Chat with me!</h1>
         </div>
       </div>
 
@@ -108,7 +108,7 @@ export default function Home() {
       </div>
 
       {/* Input Area */}
-      <div className="fixed bottom-0 w-full bg-gray-800 border-t border-gray-700 p-4">
+      <div className="fixed bottom-0 w-full bg-teal-100 border-t border-gray-700 p-4">
         <div className="max-w-3xl mx-auto">
           <div className="flex gap-3 items-center">
             <input
@@ -116,7 +116,7 @@ export default function Home() {
               value={message}
               onChange={e => setMessage(e.target.value)}
               onKeyPress={e => e.key === "Enter" && handleSend()}
-              placeholder="Ask me a question! 👋"
+              placeholder="Send me an article to chat! 👋"
               className="flex-1 rounded-xl border border-gray-500 bg-gray-900 px-4 py-3 text-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent placeholder-gray-400"
             />
             <button
@@ -124,7 +124,7 @@ export default function Home() {
               disabled={isLoading}
               className="bg-teal-600 text-white px-5 py-3 rounded-xl hover:bg-cyan-700 transition-all disabled:bg-cyan-800 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? "Sending..." : "Send"}
+              {isLoading ? "Sending..." : "Enter ⤵️"}
             </button>
           </div>
         </div>
