@@ -1,44 +1,91 @@
-# AI Answer Engine
+# AI Answer Engine with Next.js and TypeScript
+
+This project is focused on building an **AI Answer Engine** inspired by Perplexity.ai, utilizing **Next.js**, **TypeScript**, and advanced web scraping techniques. The engine mitigates hallucinations by citing sources for all provided answers. You will be creating an interface similar to [WebChat.so](https://www.webchat.so/).
+
+## Features
+- **Scrape Website Content**: Parse and extract content from URLs provided by the user.
+- **Source-Cited Responses**: Deliver AI-powered answers with accurate source citations.
+- **Interactive Chat Interface**: Allow users to ask questions, paste URLs, and share/continue conversations.
+- **Rate Limiting**: Implement rate-limiting functionality to manage usage.
+
+## Technologies Used
+- **Next.js**: Framework for the web application.
+- **TypeScript**: Strongly typed JavaScript for improved developer experience.
+- **Groq**: Query language for structured data.
+- **Cheerio and Puppeteer**: Libraries for web scraping.
+- **Redis**: Used for rate-limiting middleware.
+- **Large Language Models (LLMs)**: Backend support for natural language understanding.
 
 ## Getting Started
 
-First, clone the repository and install the dependencies:
-```bash
-git clone https://github.com/team-headstart/ai-answer-engine.git
-```
+### Prerequisites
+1. Install **Node.js** (v18 or higher) and **npm/yarn**.
+2. Set up a **Redis** instance for rate limiting.
+3. Clone this repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+   ```
+4. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-Navigate to the project directory:
-```bash
-cd ai-answer-engine
-```
+### Development Setup
+1. Create a `.env` file at the root of the project to store necessary environment variables.
+2. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+3. Open your browser and navigate to `http://localhost:3000`.
 
-Then, install the dependencies:
+## TODOs
 
-```bash
-npm install
-```
+### 1. Chat Interface
+- **File**: `src/app/page.tsx`
+- **Task**: Update the UI and handle API responses to create an interactive user experience.
 
-Then, run the development server:
-```bash
-npm run dev
-```
+### 2. Chat API Implementation
+- **File**: `src/app/api/chat/route.ts`
+- **Task**: Implement the chat API using **Groq** for querying data and **Cheerio**/**Puppeteer** for web scraping.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Rate Limiting Middleware
+- **File**: `src/middleware.ts`
+- **Task**: Use Redis to manage rate limiting and control API access.
 
-## Tasks
+## Project Submission Requirements
+To complete and submit this project, ensure the following:
 
-- Take a look at the TODOs throughout the repo, namely:
+### Functionalities
+1. **Chat Interface**
+   - Users can paste a set of URLs and receive contextual responses derived from the content of the URLs.
+2. **Question & Answer with Sources**
+   - Users can ask questions and receive answers with cited sources to enhance credibility.
+3. **Conversation Sharing**
+   - Users can share their conversation links and allow others to continue the dialogue seamlessly.
 
-    - `src/app/page.tsx`: Update the UI and handle the API response as needed
- 
-    - `src/app/api/chat/route.ts`: Implement the chat API with Groq and web scraping with Cheerio and Puppeteer
- 
-    - `src/middleware.ts`: Implement the code here to add rate limiting with Redis
+### Deployment
+- Deploy your application to a hosting platform such as Vercel, AWS, or Netlify.
+- Ensure the deployed app is functional and meets the project requirements.
 
+### Documentation
+- Include detailed documentation in the repository, covering:
+  - Setup instructions.
+  - API structure and endpoints.
+  - Explanation of key files and functionalities.
 
-## Learn More
+## Contribution Guidelines
+- Fork the repository.
+- Create a new branch for your feature or bug fix.
+- Open a pull request with a clear description of your changes.
 
-To learn more about Next.js, take a look at the following resources:
+## License
+This project is open-source and available under the [MIT License](LICENSE).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
+
+**Happy Coding!** 🎉
