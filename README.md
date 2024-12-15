@@ -43,45 +43,42 @@ This project is focused on building an **AI Answer Engine** inspired by Perplexi
    ```
 3. Open your browser and navigate to `http://localhost:3000`.
 
-## TODOs
-
-### 1. Chat Interface
-- **File**: `src/app/page.tsx`
-- **Task**: Update the UI and handle API responses to create an interactive user experience.
-
-### 2. Chat API Implementation
-- **File**: `src/app/api/chat/route.ts`
-- **Task**: Implement the chat API using **Groq** for querying data and **Cheerio**/**Puppeteer** for web scraping.
-
-### 3. Rate Limiting Middleware
-- **File**: `src/middleware.ts`
-- **Task**: Use Redis to manage rate limiting and control API access.
-
-## Project Submission Requirements
-To complete and submit this project, ensure the following:
-
-### Functionalities
-1. **Chat Interface**
-   - Users can paste a set of URLs and receive contextual responses derived from the content of the URLs.
-2. **Question & Answer with Sources**
-   - Users can ask questions and receive answers with cited sources to enhance credibility.
-3. **Conversation Sharing**
-   - Users can share their conversation links and allow others to continue the dialogue seamlessly.
-
-### Deployment
-- Deploy your application to a hosting platform such as Vercel, AWS, or Netlify.
-- Ensure the deployed app is functional and meets the project requirements.
-
 ### Documentation
-- Include detailed documentation in the repository, covering:
-  - Setup instructions.
-  - API structure and endpoints.
-  - Explanation of key files and functionalities.
+
+- **Setup Instructions**: 
+  - Detailed steps on how to set up the project locally, including prerequisites, installation, and running the application.
+
+- **API Structure and Endpoints**: 
+  - Overview of the API endpoints available in the application, including:
+    - **POST /api/chat**: Sends a user message and receives a response from the AI. 
+      - **Request Body**: 
+        ```json
+        {
+          "message": "Your question here"
+        }
+        ```
+      - **Response**: 
+        ```json
+        {
+          "message": "AI's response here"
+        }
+        ```
+
+- **Explanation of Key Files and Functionalities**: 
+  - **src/app/page.tsx**: Main component for the chat interface, handling user input and displaying messages.
+  - **src/api/chat.ts**: API route for processing chat messages and generating AI responses.
+  - **src/styles/globals.css**: Global styles for the application, including Tailwind CSS configurations.
+  - **.env**: Environment variables for configuration, such as API keys and database connections.
+
 
 ## Contribution Guidelines
 - Fork the repository.
 - Create a new branch for your feature or bug fix.
 - Open a pull request with a clear description of your changes.
+
+## Future Updates
+- Add image upload and OCR functionality to extract text from images.
+- Add a feature to save and share conversations.
 
 ## License
 This project is open-source and available under the [MIT License](LICENSE).
